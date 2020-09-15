@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MaterialModule } from '../share/material/material.module';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -12,7 +13,10 @@ import { MaterialModule } from '../share/material/material.module';
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    MaterialModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBSN-kG1piDGIRaDgU9JfqJ8R6TUInwyH0'
+    })
   ]
 })
 export class LayoutModule { }
