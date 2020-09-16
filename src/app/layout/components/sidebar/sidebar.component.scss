@@ -46,23 +46,38 @@
                     div {
                         justify-content: center;
                         text-align: center;
-                        mat-icon{
+                        mat-icon {
                             width: 100%;
                         }
                     }
                 }
             }
 
-            mat-expansion-panel{
-                background-color: rgb(184, 184, 184);
-                mat-panel-title{
+            mat-expansion-panel {
+                width: 100%;
+                background-color: #e1fcf5;
+                box-shadow: none;
+                mat-expansion-panel-header {
+                    background-color: white;
+                    border-radius: 0;
+                }
+                mat-panel-title {
                     color: black;
                 }
-                
+                mat-label{
+                    color: rgb(195, 195, 195);
+                }
+                input{
+                    color: black;
+                }
+                mat-form-field{
+                    margin: 0;
+                    margin: 3%;
+                }
             }
         }
 
-        .card-content{
+        .card-content {
             margin-top: 5%;
             display: flex;
         }
