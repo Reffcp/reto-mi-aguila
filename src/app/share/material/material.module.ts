@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -10,11 +13,16 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule,
+    MatInputModule
   ],
   exports: [
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatInputModule
   ]
 })
 export class MaterialModule { }

@@ -18,7 +18,7 @@
         </div>
         <div class="menu-elements">
             <div *ngFor="let element of menuElements">
-                <a [href]="element.link">
+                <a [routerLink]="[element.link]">
                     <p>
                         <mat-icon aria-hidden="false" aria-label="drive_eta">{{element.icon}}</mat-icon>
                         {{element.text}}
@@ -29,9 +29,54 @@
     </mat-drawer>
 
     <div class="sidenav-content">
-        <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
-            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-        </agm-map>
+        <div class="map">
+            <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+        <div class="card-detail">
+            <mat-card>
+                <mat-card>
+                    <div>
+                        <div>
+                            <mat-icon aria-hidden="false" aria-label="drive_eta">person</mat-icon>
+                            <p>Para mi</p>
+                        </div>
+                        <div>
+                            <mat-icon aria-hidden="false" aria-label="drive_eta">group</mat-icon>
+                            <p>Colega</p>
+                        </div>
+                        <div>
+                            <mat-icon aria-hidden="false" aria-label="drive_eta">account_circle</mat-icon>
+                            <p>Invitado</p>
+                        </div>
+                    </div>
+                </mat-card>
+                <div class="card-content">
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">looks_one</mat-icon>
+                    <p>Origen</p>
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">looks_two</mat-icon>
+                    <p style="display: none;">Origen</p>
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">looks_3</mat-icon>
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">looks_4</mat-icon>
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">looks_5</mat-icon>
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">looks_6</mat-icon>
+                </div>
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Cundinamarca
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-form-field>
+                            <mat-label>¿Dónde te recogemos?</mat-label>
+                            <input matInput value="">
+                        </mat-form-field>
+                    </mat-expansion-panel> 
+                </mat-accordion>
+            </mat-card>
+        </div>
     </div>
 
 </mat-drawer-container>

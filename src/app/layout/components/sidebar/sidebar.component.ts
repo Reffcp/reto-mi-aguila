@@ -48,6 +48,7 @@ export class SidebarComponent implements OnInit {
   lat: number = -23.8779431;
   lng: number = -49.8046873;
   zoom: number = 15;
+  panelOpenState = true;
   constructor() { }
   ngOnInit(): void {
     
