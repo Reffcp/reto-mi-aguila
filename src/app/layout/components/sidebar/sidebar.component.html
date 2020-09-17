@@ -78,6 +78,23 @@
                         
                     </mat-expansion-panel> 
                 </mat-accordion>
+                <mat-card-footer>
+                    <p>Favoritos</p>
+                    <div *ngFor="let direction of favoriteLocations">
+                        <div class="favorite-direction">
+                            <img src="../../../../assets/favorite.png" alt="image">
+                            <div>
+                                <h3>{{direction.name}}</h3>
+                                <p>{{direction.address}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-card-button">
+                        <button mat-mini-fab color="primary">
+                            <mat-icon aria-hidden="false" aria-label="drive_eta">arrow_forward</mat-icon>
+                        </button>
+                    </div>
+                </mat-card-footer>
             </mat-card>
         </div>
     </div>

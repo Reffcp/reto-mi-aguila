@@ -43,7 +43,24 @@ export class SidebarComponent implements OnInit {
       link:'/',
     },
   ]
-
+  favoriteLocations=[
+    {
+      name:'Ivesur',
+      address:'Cra. 56 #19-84, Bogotá, Colombia',
+    },
+    {
+      name:'Mi Águila',
+      address:'Carrera 15 80-90, bogotá',
+    },
+    {
+      name:'Aeropuerto el Dorado',
+      address:'Bogotá, Colombia',
+    },
+    {
+      name:'Work',
+      address:'Carrera 15 80-90, bogotá',
+    },
+  ]
   texto : string = 'Wenceslau Braz - Cuidado com as cargas';
   lat: number = -23.8779431;
   lng: number = -49.8046873;

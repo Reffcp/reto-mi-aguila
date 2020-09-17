@@ -29,7 +29,6 @@
         top: 1%;
         left: 1%;
         width: 280px;
-        height: 75%;
 
         mat-card {
             width: 100%;
@@ -64,15 +63,22 @@
                 mat-panel-title {
                     color: black;
                 }
-                mat-label{
+                mat-label {
                     color: rgb(195, 195, 195);
                 }
-                input{
+                input {
                     color: black;
                 }
-                mat-form-field{
+                mat-form-field {
                     margin: 0;
                     margin: 3%;
+                    width: 100%;
+                }
+            }
+
+            mat-card-footer {
+                p {
+                    margin: 5%;
                 }
             }
         }
@@ -126,5 +132,43 @@
             text-decoration: none;
             color: black;
         }
+    }
+}
+
+.favorite-direction {
+    display: flex;
+    margin: 5%;
+    padding-left: 3%;
+    align-items: center;
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+
+    div {
+        margin-left: 3%;
+
+        h3 {
+            margin: 0;
+        }
+        p {
+            margin: 0 !important;
+            margin-top: -3% !important;
+            font-size: 0.8em;
+            color: gray;
+        }
+    }
+}
+
+.footer-card-button {
+    text-align: end;
+    margin: 5%;
+
+    button {
+        border: none;
+        width: 20%;
+        padding: 2%;
+        border-radius: 5px;
     }
 }
