@@ -43,10 +43,16 @@
                     display: grid;
                     grid-row: 1;
                     div {
-                        justify-content: center;
+                        height: 75px;
+                        align-items: center;
                         text-align: center;
                         mat-icon {
                             width: 100%;
+                            margin-bottom: -12px;
+                        }
+
+                        p{
+                            margin-top: -10px;
                         }
                     }
                 }
@@ -86,6 +92,10 @@
         .card-content {
             margin-top: 5%;
             display: flex;
+
+            p{
+                margin-right: 25%;
+            }
         }
     }
 }
@@ -171,4 +181,10 @@
         padding: 2%;
         border-radius: 5px;
     }
+}
+
+.footer-favorite{
+    max-height: 280px;
+    overflow-y: scroll;
+    border-bottom: solid 1px rgb(231, 231, 231);
 }

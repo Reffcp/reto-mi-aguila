@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MapsService } from 'src/app/share/services/maps/maps.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -60,15 +61,27 @@ export class SidebarComponent implements OnInit {
       name:'Work',
       address:'Carrera 15 80-90, bogotá',
     },
+    {
+      name:'Home',
+      address:'Antonio borbón 265, Autlán de Navarro, Jalisco.',
+    },
   ]
   texto : string = 'Wenceslau Braz - Cuidado com as cargas';
   lat: number = -23.8779431;
   lng: number = -49.8046873;
   zoom: number = 15;
   panelOpenState = true;
-  constructor() { }
+
+  constructor(public mapService:MapsService) { }
+
   ngOnInit(): void {
-    
+    this.mapService.getPosition().subscribe(
+      (pos: Position) => {
+            this.lat=pos.coords.latitude;
+            this.lng=pos.coords.longitude;
+          
+      });
+      
   }
 
 }
