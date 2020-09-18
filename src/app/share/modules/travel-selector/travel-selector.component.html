@@ -1,0 +1,70 @@
+<div class="sidenav-content">
+<app-map [origin]="origin" [destination]="destination"></app-map>
+<div class="card-detail">
+    <mat-card>
+        <mat-card>
+            <div>
+                <div (click)="changeTypeClient(1)" [style]="verifiTypeClient(1)">
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">person</mat-icon>
+                    <p>Para mi</p>
+                </div>
+                <div (click)="changeTypeClient(2)" [style]="verifiTypeClient(2)">
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">group</mat-icon>
+                    <p>Colega</p>
+                </div>
+                <div (click)="changeTypeClient(3)" [style]="verifiTypeClient(3)">
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">account_circle</mat-icon>
+                    <p>Invitado</p>
+                </div>
+            </div>
+        </mat-card>
+        <div class="card-content">
+            <mat-icon aria-hidden="false" aria-label="drive_eta">looks_one</mat-icon>
+            <p [style]="verifiStage(1)">Origen</p>
+            <mat-icon aria-hidden="false" aria-label="drive_eta">looks_two</mat-icon>
+            <p [style]="verifiStage(2)">Destino</p>
+            <mat-icon aria-hidden="false" aria-label="drive_eta">looks_3</mat-icon>
+            <mat-icon aria-hidden="false" aria-label="drive_eta">looks_4</mat-icon>
+            <mat-icon aria-hidden="false" aria-label="drive_eta">looks_5</mat-icon>
+            <mat-icon aria-hidden="false" aria-label="drive_eta">looks_6</mat-icon>
+        </div>
+        
+        <mat-card-footer>
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Cundinamarca
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <mat-form-field>
+                            <mat-label>¿Dónde te recogemos?</mat-label>
+                            <input #origenInput placeholder="presiona enter al terminar" (change)="searchLocation(origenInput.value)" matInput>
+                        </mat-form-field>
+                    </mat-panel-description>
+                    
+                </mat-expansion-panel> 
+            </mat-accordion>
+            <div class="footer-favorite">
+                <p>Favoritos</p>
+            <div *ngFor="let direction of favoriteLocations; index as z;">
+                    <div (click)="setDirection(direction.address)" class="favorite-direction">
+                        <img src="../../../../assets/favorite.png" alt="image">
+                        <div>
+                            <h3>{{direction.name}}</h3>
+                            <p>{{direction.address}}</p>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            <div class="footer-card-button">
+                <button (click)="gotoURL()" mat-mini-fab color="primary">
+                    <mat-icon aria-hidden="false" aria-label="drive_eta">{{iconButton}}</mat-icon>
+                </button>
+            </div>
+        </mat-card-footer>
+    </mat-card>
+</div>
+
+</div>

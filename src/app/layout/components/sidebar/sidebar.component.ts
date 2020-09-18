@@ -43,12 +43,6 @@ export class SidebarComponent implements OnInit {
       link: '/',
     },
   ]
-  
-  
-
-  public origin: any;
-  public destination: any;
-  //geocoder = new google.maps.Geocoder();
   constructor() {
   }
 
