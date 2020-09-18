@@ -1,5 +1,5 @@
 <mat-drawer-container class="container" autosize>
-    <mat-drawer #drawer class="sidenav" mode="side" opened="true">
+    <mat-drawer #drawer class="sidenav" mode="side" [opened]="openDraw">
         <div class="logo">
             <svg data-v-2aeec0a8="" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -10,6 +10,9 @@
                     fill="#000"></path>
                 <path d="M99.496 7.934l-1.059 1.984h-2.912l1.06-1.984h2.911z" fill="#0C9"></path>
             </svg>
+            <button mat-icon-button (click)="openMenu()"  aria-label="close menu" class="button-close-menu">
+                <mat-icon>clear</mat-icon>
+            </button>
         </div>
         <div class="user">
             <img src="../../../../assets/person.png" alt="user-img">
@@ -27,5 +30,8 @@
             </div>
         </div>
     </mat-drawer>
+    <button  mat-icon-button  (click)="openMenu()" *ngIf="!openDraw"  class="button-open-menu">
+        <mat-icon>menu</mat-icon>
+    </button>
         <router-outlet></router-outlet>
 </mat-drawer-container>

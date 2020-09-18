@@ -43,9 +43,25 @@ export class SidebarComponent implements OnInit {
       link: '/',
     },
   ]
+
+  openDraw:boolean=true;
+  isSmallMobileDevice: MediaQueryList = window.matchMedia("(min-width: 769px)")
   constructor() {
   }
 
   ngOnInit(): void {
+    if (this.isSmallMobileDevice.matches) {
+      this.openDraw=true;
+    }else{
+      this.openDraw=false;
+    }
+  }
+
+  openMenu(){
+    if (this.openDraw) {
+      this.openDraw=false;
+    } else {
+      this.openDraw=true;
+    }
   }
 }

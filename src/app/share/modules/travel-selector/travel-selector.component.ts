@@ -16,7 +16,7 @@ export class TravelSelectorComponent implements OnInit {
   @Input() nextUrl: any;
   @Input() buttonType: any;
   
-  favoriteLocations:FavoriteLocation[] = []
+  favoriteLocations:FavoriteLocation[] = [];
   panelOpenState:boolean = true;
   iconButton:string="arrow_forward"
   constructor(public locationService:LocationsService,public router:Router) { }
