@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Travel } from 'src/app/share/interfaces/travel';
 import { LocationsService } from 'src/app/share/services/locations.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class OrigenComponent implements OnInit {
   
   ngOnInit(): void {
     this.locationService.getDemoTravel()
-    .subscribe((data:any) => {
+    .subscribe((data:Travel) => {
       this.origin=data.origin;
       this.destination=data.destination;
     })

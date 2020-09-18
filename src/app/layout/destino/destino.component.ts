@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Travel } from 'src/app/share/interfaces/travel';
 import { LocationsService } from 'src/app/share/services/locations.service';
 
 @Component({
@@ -8,7 +9,6 @@ import { LocationsService } from 'src/app/share/services/locations.service';
   styleUrls: ['./destino.component.scss']
 })
 export class DestinoComponent implements OnInit {
-  panelOpenState = true;
   origin:any;
   destination:any;
   
@@ -17,7 +17,7 @@ export class DestinoComponent implements OnInit {
   ngOnInit(): void {
     this.origin=JSON.parse(this.activatedRoute.snapshot.paramMap.get('origen'));
     this.locationService.getDemoTravel()
-    .subscribe((data:any) => {
+    .subscribe((data:Travel) => {
       this.destination=data.destination;
     })
   }

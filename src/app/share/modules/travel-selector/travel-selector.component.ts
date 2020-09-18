@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FavoriteLocation } from '../../interfaces/favorite-location';
 import { LocationsService } from '../../services/locations.service';
 
 @Component({
@@ -15,14 +16,14 @@ export class TravelSelectorComponent implements OnInit {
   @Input() nextUrl: any;
   @Input() buttonType: any;
   
-  favoriteLocations:any = []
-  panelOpenState = true;
-  iconButton="arrow_forward"
+  favoriteLocations:FavoriteLocation[] = []
+  panelOpenState:boolean = true;
+  iconButton:string="arrow_forward"
   constructor(public locationService:LocationsService,public router:Router) { }
   
   ngOnInit(): void {
     this.locationService.getFavoriteLocations()
-    .subscribe((data) => {
+    .subscribe((data:FavoriteLocation[]) => {
       this.favoriteLocations=data;
     })
     if (this.buttonType!='back') {
